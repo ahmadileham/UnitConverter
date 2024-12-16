@@ -5,13 +5,13 @@ import com.converter.service.UnitConversionService;
 public class WeightConverter implements UnitConversionService {
     @Override
     public double convert(double value, String fromUnit, String toUnit) {
-        if ("kilograms".equals(fromUnit) && "grams".equals(toUnit)) {
+        if ("kilogram".equals(fromUnit) && "gram".equals(toUnit)) {
             return value * 1000;
-        } else if ("grams".equals(fromUnit) && "kilograms".equals(toUnit)) {
+        } else if ("gram".equals(fromUnit) && "kilogram".equals(toUnit)) {
             return value / 1000;
-        } else if ("pounds".equals(fromUnit) && "kilograms".equals(toUnit)) {
+        } else if ("pound".equals(fromUnit) && "kilogram".equals(toUnit)) {
             return value * 0.453592;
-        } else if ("kilograms".equals(fromUnit) && "pounds".equals(toUnit)) {
+        } else if ("kilogram".equals(fromUnit) && "pound".equals(toUnit)) {
             return value / 0.453592;
         }
         throw new IllegalArgumentException("Unsupported units: " + fromUnit + " to " + toUnit);
